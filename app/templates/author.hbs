@@ -1,7 +1,9 @@
 {{page-title "Author"}}
 <div class="panel-heading">
     <div class="search">
-        <input type="text" placeholder="Search by Author Name">
+        <label>
+            <input type="text" placeholder="Search by Author Name">
+        </label>
     </div>
 
     <a href>
@@ -12,8 +14,8 @@
 <div class="panel-content">
     <h3 class="panel-title">Authors</h3>
     <ul class="collection">
-    {{#each this.model.data as |author|}}
-        <li><a href>{{author.attributes.firstName}} {{author.attributes.lastName}}</a></li>
+    {{#each @model as |author|}}
+        <AuthorListItem @firstName={{author.firstName}} @lastName={{author.lastName}}/>
     {{/each}}
     </ul>
 </div>
