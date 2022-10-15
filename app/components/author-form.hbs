@@ -1,0 +1,15 @@
+<form {{on "submit" this.submitChanges}}>
+    <div class="field">
+        <label for="firstName">First Name: {{this.firstName}}</label>
+        <Input placeholder="First Name" @value={{this.firstName}} id="firstName"/>
+    </div>
+
+    <div class="field">
+        <label for="lastName">Last Name: {{this.lastName}}</label>
+        <Input placeholder="Last Name" @value={{this.lastName}} id="lastName"/>
+    </div>
+
+    <div class="form-footer">
+        <button type="submit" class="btn-submit">save</button>
+    </div>
+</form>

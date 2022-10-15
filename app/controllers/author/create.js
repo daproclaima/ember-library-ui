@@ -1,35 +1,26 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import {
-  CREATE_AUTHOR_DEFAULT_MODEL
-} from '../../constants/FORM_DEFAULT_MODELS'
-// import { tracked } from '@glimmer/tracking';
+import { service } from '@ember/service';
+import { AUTHOR } from '../../constants/MODEL_NAMES';
+import { AUTHOR_INDEX } from '../../constants/ROUTES_NAMES';
 
 export default class AuthorCreateController extends Controller {
-  // /**
-  //  * @deprecated
-  //  */
-  // constructor() {
-  //   super(...arguments);
-  //   this.formData = CREATE_AUTHOR_DEFAULT_MODEL;
-  // }
-
-  // /**
-  //  * @deprecated
-  //  */
-  // @tracked formData;
+  @service store;
+  @service router;
 
   @action saveAuthor(event) {
-    console.log('event.target : ', event.target);
-  }
+    event.preventDefault();
+    // console.log('event.target : ', event.target);
+    // console.log('this.model : ', this.model);
 
-  // reset() {
-  //   // does not work
-  //   this.model = { ...CREATE_AUTHOR_DEFAULT_MODEL };
-  //
-  //   // this.formData = {
-  //   //   firstName: '',
-  //   //   lastName: '',
-  //   // };
-  // }
+    let author = this.store.createRecord(AUTHOR, this.model);
+
+    // equals await author.save(). If save is not called, it only creates a local copy
+    // author.save().then(() => {});
+
+    author.save().then(() => {
+      // https://deprecations.emberjs.com/ember/v3.x/#toc_routing-transition-methods
+      this.router.transitionTo(AUTHOR_INDEX);
+    });
+  }
 }

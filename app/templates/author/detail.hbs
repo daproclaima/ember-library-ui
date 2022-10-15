@@ -6,7 +6,11 @@
             <div class="slide-out-heading">
                 <div class="title">
                     <h3>{{@model.lastName}}, {{@model.firstName}}</h3>
+
                     <div class="actions">
+                        <LinkTo @route="author.edit" @model={{@model.id}}>
+                            <button class="btn-pop" type="button">edit</button>
+                        </LinkTo>
                         <button class="btn-recessed" type="button" {{on "click" (fn this.deleteAuthor @model)}}>
                             delete
                         </button>
