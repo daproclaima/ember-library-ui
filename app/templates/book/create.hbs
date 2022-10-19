@@ -1,0 +1,46 @@
+{{page-title "Create"}}
+<div class="slide-out-bg"></div>
+<div class="slide-out">
+    <div class="slide-out-card">
+        <LinkTo @route="book" class="btn-back">
+            <span class="sr-only">Back</span>
+        </LinkTo>
+
+        <div class="slide-out-heading">
+            <div class="title">
+                <h3>New Book</h3>
+            </div>
+        </div>
+
+        <div class="slide-out-content">
+            <form>
+{{!--            <form {{on "submit" this.saveAuthor}}>--}}
+{{!--                <div class="field">--}}
+{{!--                    <label for="firstName">First Name:</label>--}}
+{{!--                    <Input placeholder="First Name" @value={{@model.firstName}} id="firstName"/>--}}
+{{!--                </div>--}}
+
+{{!--                <div class="field">--}}
+{{!--                    <label for="lastName">Last Name:</label>--}}
+{{!--                    <Input placeholder="Last Name" @value={{@model.lastName}} id="lastName"/>--}}
+{{!--                </div>--}}
+                <p class="control">
+                    <PowerSelect
+                            @onChange={{this.selectAuthor}}
+                            @searchEnabled={{true}}
+                            @searchField="firstName"
+                            @search={{this.searchAuthor}}
+                            @options={{@model}}
+                            as |author|
+                    >
+                        {{author.lastName}}, {{author.firstName}}
+                    </PowerSelect>
+                </p>
+
+                <div class="form-footer">
+                    <button type="submit" class="btn-submit">save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
