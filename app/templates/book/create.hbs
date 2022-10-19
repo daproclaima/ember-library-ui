@@ -13,29 +13,36 @@
         </div>
 
         <div class="slide-out-content">
-            <form>
-{{!--            <form {{on "submit" this.saveAuthor}}>--}}
-{{!--                <div class="field">--}}
-{{!--                    <label for="firstName">First Name:</label>--}}
-{{!--                    <Input placeholder="First Name" @value={{@model.firstName}} id="firstName"/>--}}
-{{!--                </div>--}}
+            <form {{on "submit" this.saveBook}}>
+                <div class="field">
+                    <label for="title">Title:</label>
+                    <Input placeholder="Title" @value={{@model.title}} id="title"/>
+                </div>
 
-{{!--                <div class="field">--}}
-{{!--                    <label for="lastName">Last Name:</label>--}}
-{{!--                    <Input placeholder="Last Name" @value={{@model.lastName}} id="lastName"/>--}}
-{{!--                </div>--}}
-                <p class="control">
-                    <PowerSelect
-                            @onChange={{this.selectAuthor}}
-                            @searchEnabled={{true}}
-                            @searchField="firstName"
-                            @search={{this.searchAuthor}}
-                            @options={{@model}}
-                            as |author|
-                    >
-                        {{author.lastName}}, {{author.firstName}}
-                    </PowerSelect>
-                </p>
+                <div class="field">
+                    <label for="isbn">ISBN:</label>
+                    <Input placeholder="Title" @value={{@model.isbn}} id="isbn"/>
+                </div>
+
+                <div class="field">
+                    <label for="publishDate">Publish Date:</label>
+                    <Input @type="date" placeholder="Publish date" @value={{@model.publishDate}} id="publishDate"/>
+                </div>
+
+                <div class="field">
+                    <label for="author">Author:</label>
+                    <p class="control">
+                        <PowerSelect
+                                @onChange={{fn (mut @model.author)}}
+                                @selected={{this.authorArray}}
+                                @searchEnabled={{true}}
+                                @search={{this.searchAuthor}}
+                                as |author|
+                        >
+                            {{author.lastName}}, {{author.firstName}}
+                        </PowerSelect>
+                    </p>
+                </div>
 
                 <div class="form-footer">
                     <button type="submit" class="btn-submit">save</button>

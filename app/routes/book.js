@@ -6,6 +6,11 @@ export default class BookRoute extends Route {
   @service store;
 
   async model() {
-    return await this.store.findAll(AUTHOR);
+    return {
+      title: '',
+      isbn: '',
+      publishDate: null,
+      author: null,
+    };
   }
 }
