@@ -33,16 +33,18 @@
                     <label for="author">Author:</label>
                     <p class="control">
                         <PowerSelect
-                                @onChange={{fn (mut @model.author)}}
-                                @selected={{this.authorArray}}
                                 @searchEnabled={{true}}
                                 @search={{this.searchAuthor}}
+                                @selected={{if @model.author (concat @model.author.lastName "," @model.author.firstName) ""}}
+                                @onChange={{fn (mut @model.author)}}
                                 as |author|
                         >
                             {{author.lastName}}, {{author.firstName}}
                         </PowerSelect>
                     </p>
                 </div>
+
+                {{log "@model.author" @model.author}}
 
                 <div class="form-footer">
                     <button type="submit" class="btn-submit">save</button>

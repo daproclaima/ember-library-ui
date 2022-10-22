@@ -1,0 +1,50 @@
+{{page-title "Detail"}}
+<div class="slide-out-bg"></div>
+
+<div class="slide-out">
+    <div class="slide-out-card">
+        <LinkTo @route="book" class="btn-back"><div class="sr-only">Back</div></LinkTo>
+
+        <div class="slide-out-heading">
+            <div class="tilte">
+                <h3>{{@model.title}}</h3>
+            </div>
+
+            <div class="actions">
+{{!--                <LinkTo @route="book.edit" @model={{@model.id}}>--}}
+{{!--                    <button class="btn-pop" type="button">edit</button>--}}
+{{!--                </LinkTo>--}}
+                <button class="btn-recessed" type="button" {{on "click" this.destroy}}>
+                    delete
+                </button>
+            </div>
+
+            <div class="detail">
+                <p>
+                    <strong>Author:</strong>
+
+                    <LinkTo @route="author.detail" @model={{@model.author.id}}>
+                        {{@model.author.lastName}}, {{@model.author.firstName}}
+                    </LinkTo>
+                </p>
+
+                <p>
+                    <strong>Publish Date:</strong>
+
+                    {{@model.publishDate}}
+                </p>
+
+                <p>
+                    <strong>ISBN:</strong>
+
+                    {{@model.isbn}}
+                </p>
+            </div>
+
+            <div class="slide-out">
+                {{outlet}}
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,25 +1,26 @@
-<div class="slide-out-bg">
-    <div class="slide-out">
-        <div class="slide-out-card">
-            <LinkTo @route="author" class="btn-back"><span class="sr-only">Back</span></LinkTo>
+{{page-title "Detail"}}
+<div class="slide-out-bg"></div>
 
-            <div class="slide-out-heading">
-                <div class="title">
-                    <h3>{{@model.lastName}}, {{@model.firstName}}</h3>
+<div class="slide-out">
+    <div class="slide-out-card">
+        <LinkTo @route="author" class="btn-back"><span class="sr-only">Back</span></LinkTo>
 
-                    <div class="actions">
-                        <LinkTo @route="author.edit" @model={{@model.id}}>
-                            <button class="btn-pop" type="button">edit</button>
-                        </LinkTo>
-                        <button class="btn-recessed" type="button" {{on "click" (fn this.deleteAuthor @model)}}>
-                            delete
-                        </button>
-                    </div>
+        <div class="slide-out-heading">
+            <div class="title">
+                <h3>{{@model.lastName}}, {{@model.firstName}}</h3>
+
+                <div class="actions">
+                    <LinkTo @route="author.edit" @model={{@model.id}}>
+                        <button class="btn-pop" type="button">edit</button>
+                    </LinkTo>
+                    <button class="btn-recessed" type="button" {{on "click" (fn this.deleteAuthor @model)}}>
+                        delete
+                    </button>
                 </div>
             </div>
         </div>
-
-
-        <div class="slide-out-content"></div>
     </div>
+
+
+    <div class="slide-out-content"></div>
 </div>

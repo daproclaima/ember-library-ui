@@ -8,6 +8,6 @@ export default class AuthorDetailController extends Controller {
 
   @action async deleteAuthor(author) {
     await author.destroyRecord();
-    this.router.transitionTo(AUTHOR + '.index');
+    this.router.transitionTo(AUTHOR);
   }
 }
