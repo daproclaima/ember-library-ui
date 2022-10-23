@@ -35,7 +35,9 @@
                         <PowerSelect
                                 @searchEnabled={{true}}
                                 @search={{this.searchAuthor}}
-                                @selected={{if @model.author (concat @model.author.lastName "," @model.author.firstName) ""}}
+                                @selected={{if
+                                @model.author (concat @model.author.lastName "," @model.author.firstName)
+                                ""}}
                                 @onChange={{fn (mut @model.author)}}
                                 as |author|
                         >
@@ -44,7 +46,10 @@
                     </p>
                 </div>
 
-                {{log "@model.author" @model.author}}
+                <div class="field">
+                    <label>Don't see your Author</label>
+                    <NewAuthorModal @author={{@model.author}} @onsave={{fn (mut @model.author)}}/>
+                </div>
 
                 <div class="form-footer">
                     <button type="submit" class="btn-submit">save</button>
