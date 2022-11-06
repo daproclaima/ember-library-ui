@@ -7,7 +7,7 @@ export default class BookSerializer extends JSONAPISerializer {
     json.data.attributes = {
       isbn: json.data.attributes.isbn,
       title: json.data.attributes.title,
-      publishDate: json.data.attributes.publishDate,
+      'publish-date': json.data.attributes?.['publish-date'],
     };
 
     return json;

@@ -3,23 +3,28 @@
 
 <div class="slide-out">
     <div class="slide-out-card">
-        <LinkTo @route="book" class="btn-back"><div class="sr-only">Back</div></LinkTo>
+        <LinkTo @route="book" class="btn-back">
+            <div class="sr-only">Back</div>
+        </LinkTo>
 
         <div class="slide-out-heading">
-            <div class="tilte">
+            <div class="title">
                 <h3>{{@model.title}}</h3>
+
+                <div class="actions">
+                    <button class="btn-pop" type="button">
+                        <LinkTo @route="book.edit" @model={{@model.id}}>
+                            edit
+                        </LinkTo>
+                    </button>
+
+                    <button class="btn-recessed" type="button">
+                        delete
+                    </button>
+                </div>
             </div>
 
-            <div class="actions">
-{{!--                <LinkTo @route="book.edit" @model={{@model.id}}>--}}
-{{!--                    <button class="btn-pop" type="button">edit</button>--}}
-{{!--                </LinkTo>--}}
-                <button class="btn-recessed" type="button" {{on "click" this.destroy}}>
-                    delete
-                </button>
-            </div>
-
-            <div class="detail">
+            <div class="details">
                 <p>
                     <strong>Author:</strong>
 
@@ -40,11 +45,6 @@
                     {{@model.isbn}}
                 </p>
             </div>
-
-            <div class="slide-out">
-                {{outlet}}
-            </div>
-
         </div>
     </div>
 </div>

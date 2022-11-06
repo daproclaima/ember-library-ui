@@ -70,5 +70,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "luxon": "^3.0.4"
   }
 }

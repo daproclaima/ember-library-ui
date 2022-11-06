@@ -12,9 +12,8 @@ export default class BookCreateController extends Controller {
     return await this.store.query(AUTHOR, { filter: { query } });
   }
 
-  @action saveBook(event) {
-    event.preventDefault();
-    const book = this.store.createRecord(BOOK, this.model);
+  @action saveBook(attributes) {
+    const book = this.store.createRecord(BOOK, attributes);
 
     book.save().then(() => this.router.transitionTo(BOOK_INDEX));
   }

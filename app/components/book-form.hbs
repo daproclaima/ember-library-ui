@@ -1,0 +1,42 @@
+<form {{on "submit" this.submitChanges}}>
+    <div class="field">
+        <label for="title">Title:</label>
+        <Input placeholder="Title" @value={{this.book.title}} id="title"/>
+    </div>
+
+    <div class="field">
+        <label for="isbn">ISBN:</label>
+        <Input placeholder="Title" @value={{this.book.isbn}} id="isbn"/>
+    </div>
+
+    <div class="field">
+        <label for="publishDate">Publish Date:</label>
+        <Input @type="date" placeholder="Publish date" @value={{this.book.publishDate}} id="publishDate"/>
+    </div>
+
+    <div class="field">
+        <label for="author">Author:</label>
+        <p class="control">
+            <PowerSelect
+                    @searchEnabled={{true}}
+                    @search={{this.searchAuthor}}
+                    @selected={{if
+                    this.book.author (concat this.book.author.lastName "," this.book.author.firstName)
+                    ""}}
+                    @onChange={{fn (mut this.book.author)}}
+                    as |author|
+            >
+                {{author.lastName}}, {{author.firstName}}
+            </PowerSelect>
+        </p>
+    </div>
+
+    <div class="field">
+        <label>Don't see your Author</label>
+        <NewAuthorModal @author={{this.book.author}} @onsave={{fn (mut this.book.author)}}/>
+    </div>
+
+    <div class="form-footer">
+        <button type="submit" class="btn-submit">save</button>
+    </div>
+</form>
