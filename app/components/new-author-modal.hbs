@@ -2,25 +2,33 @@
 
 {{#if this.isShowing}}
     <div class="modal">
-        <form class="modal-card" id="form-new-author">
+        <form class="modal-card" id="form-new-author"  {{on "submit" this.save}}>
             <h3 class="modal-heading">Add new author for book</h3>
+
             <div class="modal-content">
                 <div class="field">
                     <label for="new-author-firstname">First Name:</label>
-                    <Input @type="text" placeholder="First Name" id="new-author-firstname"
-                           @value={{this.author.firstName}}/>
+                    <Input
+                        @type="text"
+                        placeholder="First Name"
+                        id="new-author-firstname"
+                        @value={{this.author.firstName}}
+                    />
                 </div>
-
                 <div class="field">
                     <label for="new-author-lastname">Last Name:</label>
-                    <Input @type="text" placeholder="Last Name" id="new-author-lastname"
-                           @value={{this.author.lastName}}/>
+                    <Input
+                        @type="text"
+                        placeholder="Last Name"
+                        id="new-author-lastname"
+                        @value={{this.author.lastName}}
+                    />
                 </div>
-
             </div>
+
             <div class="modal-footer">
                 <button class="btn-clear" type="button" {{on "click" (fn this.setIsShowing false)}} >Cancel</button>
-                <button class="btn-submit" type="submit" {{on "click" this.save}}>Submit</button>
+                <button class="btn-submit" type="submit">Submit</button>
             </div>
         </form>
     </div>

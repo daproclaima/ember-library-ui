@@ -22,7 +22,6 @@ export default class NewAuthorModalComponent extends Component {
 
   @action save(event) {
     event.preventDefault();
-    console.log('this.author : ', this.author);
     const author = this.store.createRecord(AUTHOR, this.author);
 
     author.save().then(() => {

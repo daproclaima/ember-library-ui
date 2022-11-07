@@ -1,0 +1,43 @@
+{{page-title "New book"}}
+<div class="modal">
+    <form class="modal-card" id="form-new-author" {{on "submit" this.saveBook}}>
+        <h3 class="modal-heading">Add new book for {{@model.author.lastName}}, {{@model.author.firstName}}</h3>
+
+        <div class="modal-content">
+            <div class="field">
+                <label for="new-book-title">Title:</label>
+                <Input
+                    @type="text"
+                    placeholder="Title"
+                    id="new-book-title"
+                    @value={{@model.book.title}}
+                />
+            </div>
+
+            <div class="field">
+                <label for="new-book-isbn">ISBN:</label>
+                <Input
+                    @type="text"
+                    placeholder="ISBN"
+                    id="new-book-isbn"
+                    @value={{@model.book.isbn}}
+                />
+            </div>
+
+            <div class="field">
+                <label for="new-book-publish-date">Publish date:</label>
+                <Input
+                    @type="date"
+                    placeholder="Publish date"
+                    id="new-book-publish-date"
+                    @value={{@model.book.publishDate}}
+                />
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <LinkTo @route="author.detail"><button class="btn-clear" type="button">Cancel</button></LinkTo>
+            <button class="btn-submit" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
