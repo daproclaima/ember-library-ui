@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import { service } from '@ember/service';
+// import { service } from '@ember/service';
 import { action } from '@ember/object';
 /**
  * @class
@@ -16,7 +16,7 @@ export default class AuthorFormComponent extends Component {
     this.onsubmit = args.onsubmit;
   }
 
-  @service store;
+  // @service store;
 
   @action submitChanges(event) {
     event.preventDefault();

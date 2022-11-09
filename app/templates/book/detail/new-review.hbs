@@ -1,0 +1,7 @@
+{{page-title "New review"}}
+
+<div class="title">
+    <h3>New Review for {{@model.book.title}}</h3>
+</div>
+
+<ReviewForm @review={{@model.review}} @book={{@model.book}} @onsubmit={{this.saveReview}}/>
