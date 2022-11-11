@@ -1199,6 +1199,14 @@
     ember-cli-version-checker "^5.1.2"
     semver "^7.3.5"
 
+"@embroider/addon-shim@^0.50.2":
+  version "0.50.2"
+  resolved "https://registry.yarnpkg.com/@embroider/addon-shim/-/addon-shim-0.50.2.tgz#9be2ed8cee1086cef63c5baecf8dde8dcdacc24e"
+  integrity sha512-a+pFlXZPovcCNFo05HxXBW9ole43mPyFZnkhvZlLF0f1sHEn9j0sD1Ld2BM/NCERmHcYz9eXQnX1FPNLCDoGEA==
+  dependencies:
+    "@embroider/shared-internals" "^0.50.2"
+    semver "^7.3.5"
+
 "@embroider/addon-shim@^1.5.0":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@embroider/addon-shim/-/addon-shim-1.8.3.tgz#2368510b8ce42d50d02cb3289c32e260dfa34bd9"
@@ -1230,6 +1238,19 @@
     ember-rfc176-data "^0.3.17"
     fs-extra "^9.1.0"
     js-string-escape "^1.0.1"
+    lodash "^4.17.21"
+    resolve-package-path "^4.0.1"
+    semver "^7.3.5"
+    typescript-memoize "^1.0.1"
+
+"@embroider/shared-internals@^0.50.2":
+  version "0.50.2"
+  resolved "https://registry.yarnpkg.com/@embroider/shared-internals/-/shared-internals-0.50.2.tgz#567c5451db31a1f3edc2f64376ce5a0dcaaabacb"
+  integrity sha512-l3SKn1YdxTFBjY3ylYTLHxFY0dG2XxIsjbtZt7Mm6QyZFssWBDg3oWYwBoUpkw/ysjNJf8IcI7reXhB23WXwDw==
+  dependencies:
+    babel-import-util "^1.1.0"
+    ember-rfc176-data "^0.3.17"
+    fs-extra "^9.1.0"
     lodash "^4.17.21"
     resolve-package-path "^4.0.1"
     semver "^7.3.5"
@@ -5123,6 +5144,13 @@ ember-modifier@^3.2.7:
     ember-cli-typescript "^5.0.0"
     ember-compatibility-helpers "^1.2.5"
 
+ember-moment@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/ember-moment/-/ember-moment-10.0.0.tgz#db2affde4574b7d679ad1a34e8a5675fda0b72fe"
+  integrity sha512-vpnWVn3QfVBVP0MUnOkFI8fqqjskTh2LxOxyBaaRY7Smbcymq3b8wVB9GSNRasmyaclQVGY8jZsqi5ue7O2TUw==
+  dependencies:
+    "@embroider/addon-shim" "^0.50.2"
+
 ember-page-title@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/ember-page-title/-/ember-page-title-7.0.0.tgz#11bebd4901d80757646c9006954a13e4fc187421"
@@ -8378,6 +8406,11 @@ mktemp@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/mktemp/-/mktemp-0.4.0.tgz#6d0515611c8a8c84e484aa2000129b98e981ff0b"
   integrity sha512-IXnMcJ6ZyTuhRmJSjzvHSRhlVPiN9Jwc6e59V0bEJ0ba6OBeX2L0E+mRN1QseeOF4mM+F1Rit6Nh7o+rl2Yn/A==
+
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 morgan@^1.10.0:
   version "1.10.0"
