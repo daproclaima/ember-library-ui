@@ -1,7 +1,8 @@
 {{page-title "New review"}}
+<div class="slide-out-content">
+    <div class="title">
+        <h3>New Review for {{@model.book.title}}</h3>
+    </div>
 
-<div class="title">
-    <h3>New Review for {{@model.book.title}}</h3>
+    <ReviewForm @review={{@model.review}} @book={{@model.book}} @onsubmit={{this.saveReview}}/>
 </div>
-
-<ReviewForm @review={{@model.review}} @book={{@model.book}} @onsubmit={{this.saveReview}}/>

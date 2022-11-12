@@ -1,6 +1,6 @@
 <button type="button" class="btn-trigger" {{on "click" (fn this.setIsShowing true)}}>Add a new Author</button>
 
-{{#if this.isShowing}}
+{{#liquid-if this.isShowing class='liquid-form-new-author modal-if'}}
     <div class="modal">
         <form class="modal-card" id="form-new-author"  {{on "submit" this.save}}>
             <h3 class="modal-heading">Add new author for book</h3>
@@ -9,19 +9,19 @@
                 <div class="field">
                     <label for="new-author-firstname">First Name:</label>
                     <Input
-                        @type="text"
-                        placeholder="First Name"
-                        id="new-author-firstname"
-                        @value={{this.author.firstName}}
+                            @type="text"
+                            placeholder="First Name"
+                            id="new-author-firstname"
+                            @value={{this.author.firstName}}
                     />
                 </div>
                 <div class="field">
                     <label for="new-author-lastname">Last Name:</label>
                     <Input
-                        @type="text"
-                        placeholder="Last Name"
-                        id="new-author-lastname"
-                        @value={{this.author.lastName}}
+                            @type="text"
+                            placeholder="Last Name"
+                            id="new-author-lastname"
+                            @value={{this.author.lastName}}
                     />
                 </div>
             </div>
@@ -32,4 +32,4 @@
             </div>
         </form>
     </div>
-{{/if}}
+{{/liquid-if}}

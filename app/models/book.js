@@ -7,5 +7,5 @@ export default class BookModel extends Model {
   @attr(STRING) isbn;
   @attr(PUBLISH_DATE) publishDate;
   @belongsTo(AUTHOR, { async: true, inverse: null }) author;
-  @hasMany(REVIEW) reviews;
+  @hasMany(REVIEW, { async: true, inverse: null }) reviews;
 }
