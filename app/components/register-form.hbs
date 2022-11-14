@@ -1,0 +1,67 @@
+
+<div class="slide-out">
+    <div class="slide-out-card">
+        <div class="slide-out-heading">
+            <div class="title">
+                <h3>Register</h3>
+            </div>
+        </div>
+
+        <div class="slide-out-content">
+            <form {{on "submit" this.saveUser}}>
+                <div class="field">
+                    <label for="email">Email:</label>
+                    <Input placeholder="Email" @value={{@user.email}} id="email" autocomplete/>
+                    {{#each @errors.email as |error|}}
+                        <span class="error-message">{{error.message}}</span>
+                    {{/each}}
+                </div>
+
+                <div class="field">
+                    <label for="username">Username:</label>
+                    <Input
+                        placeholder="Username"
+                        @value={{@user.username}}
+                        id="username"
+                        autocomplete
+                    />
+                    {{#each @errors.username as |error|}}
+                        <span class="error-message">{{error.message}}</span>
+                    {{/each}}
+                </div>
+
+                <div class="field">
+                    <label for="password">Password:</label>
+                    <Input
+                        placeholder="Password"
+                        @value={{@user.password}}
+                        @type="password"
+                        id="password"
+                        autocomplete
+                    />
+                    {{#each @errors.password as |error|}}
+                        <span class="error-message">{{error.message}}</span>
+                    {{/each}}
+                </div>
+
+                <div class="field">
+                    <label for="password-confirmation">Confirm password:</label>
+                    <Input
+                        placeholder="Confirm password"
+                        @value={{@user.passwordConfirmation}}
+                        @type="password"
+                        id="password-confirmation"
+                        autocomplete
+                    />
+                    {{#each @errors.passwordConfirmation as |error|}}
+                        <span class="error-message">{{error.message}}</span>
+                    {{/each}}
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="btn-submit">save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

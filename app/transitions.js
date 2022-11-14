@@ -1,8 +1,9 @@
 import {
   AUTHOR_DETAIL_INDEX,
   AUTHOR_INDEX,
-  BOOK_DETAIL_INDEX, BOOK_INDEX,
-} from './constants/ROUTES_NAMES'
+  BOOK_DETAIL_INDEX,
+  BOOK_INDEX,
+} from './constants/ROUTES_NAMES';
 
 const duration = 600;
 

@@ -1,3 +1,4 @@
+export const INDEX = 'index';
 export const AUTHOR_INDEX = 'author.index';
 export const AUTHOR_EDIT = 'author.edit';
 export const AUTHOR_DETAIL = 'author.detail';
