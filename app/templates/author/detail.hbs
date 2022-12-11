@@ -18,6 +18,14 @@
                     </button>
                 </div>
             </div>
+
+            <div class="details">
+                <p>
+                    <strong>Added By:</strong>
+
+                    {{@model.username}}
+                </p>
+            </div>
         </div>
         <div class="slide-out-content">
             <div class="title">
@@ -33,15 +41,15 @@
             </div>
 
             <ul class="book-list">
-            {{#each @model.books as |book|}}
-                <li class="book">
-                    <p class="book-title">
-                        <LinkTo @route="book.detail" @model={{book.id}}>{{book.title}}</LinkTo>
-                    </p>
-                    <p class="book-isbn">{{book.isbn}}</p>
-                </li>
-            {{/each}}
-        </ul>
+                {{#each @model.books as |book|}}
+                    <li class="book">
+                        <p class="book-title">
+                            <LinkTo @route="book.detail" @model={{book.id}}>{{book.title}}</LinkTo>
+                        </p>
+                        <p class="book-isbn">{{book.isbn}}</p>
+                    </li>
+                {{/each}}
+            </ul>
         </div>
     </div>
 </div>

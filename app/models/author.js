@@ -5,5 +5,6 @@ import { BOOK } from '../constants/MODEL_NAMES';
 export default class AuthorModel extends Model {
   @attr(STRING) firstName;
   @attr(STRING) lastName;
+  @attr(STRING) username;
   @hasMany(BOOK, { async: true, inverse: null }) books;
 }
