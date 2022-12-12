@@ -1,10 +1,5 @@
 <form {{on "submit" this.submitChanges}}>
     <div class="field">
-        <label for="fullName">Your full name</label>
-        <Input @type="text" @value={{this.user}} id="fullName" />
-    </div>
-
-    <div class="field">
         <label for="body">Write your review</label>
         <Textarea @value={{this.body}} id="body" />
     </div>

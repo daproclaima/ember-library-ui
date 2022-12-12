@@ -10,17 +10,20 @@ export default class ApplicationRoute extends Route {
   @service currentUser;
 
   beforeModel() {
+    this.session.setup();
     this.loadUser();
   }
 
   constructor() {
     super(...arguments);
 
-    this.session.setup();
-
+    // https://ember-simple-auth.com/api/classes/ApplicationRouteMixin.html#method_sessionInvalidated not used as we want to be redirected to login page
+    // this.session.sessionInvalidated
     this.session.handleInvalidation = () =>
       window.location.replace(`/${LOGIN}`);
 
+    // https://ember-simple-auth.com/api/classes/ApplicationRouteMixin.html#method_sessionAuthenticated is not more fitting than handleAuthentication
+    // this.session.sessionAuthenticated = () => this.loadUser();
     this.session.handleAuthentication = () => this.loadUser();
   }
 

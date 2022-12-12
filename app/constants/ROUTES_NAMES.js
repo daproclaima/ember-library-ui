@@ -2,6 +2,7 @@ export const INDEX = 'index';
 export const AUTHOR_INDEX = 'author.index';
 export const AUTHOR_EDIT = 'author.edit';
 export const AUTHOR_DETAIL = 'author.detail';
+export const AUTHOR_CREATE = 'author.create';
 export const AUTHOR_DETAIL_INDEX = `${AUTHOR_DETAIL}.index`;
 
 export const BOOK_INDEX = 'book.index';
