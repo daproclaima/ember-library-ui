@@ -3,9 +3,11 @@
     <div class="title">
         <h3>{{@model.reviews.lenght}} Reviews</h3>
         <div class="actions">
-            <LinkTo @route="book.detail.new-review" @model={{@model.id}}>
-                <button class="btn-secondary btn-add btn" type="button">Add your review</button>
-            </LinkTo>
+            {{#if (can "create review" @model)}}
+                <LinkTo @route="book.detail.new-review" @model={{@model.id}}>
+                    <button class="btn-secondary btn-add btn" type="button">Add your review</button>
+                </LinkTo>
+            {{/if}}
         </div>
     </div>
 

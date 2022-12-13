@@ -5,7 +5,7 @@ export default class BookAbility extends Ability {
   @service currentUser;
 
   get canEdit() {
-    return this.currentUser.user.username === this.model.username;
+    return this.currentUser?.user?.username === this.model?.username;
   }
 
   get canDelete() {

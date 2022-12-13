@@ -8,10 +8,10 @@ export default class AuthorAbility extends Ability {
   @tracked model;
 
   get canEdit() {
-    return this.currentUser.user.username === this.model.username;
+    return this.currentUser?.user?.username === this.model?.username;
   }
 
   canDelete() {
-    return this.canEdit && this.model.books.length === 0;
+    return this.canEdit && this.model?.books?.length === 0;
   }
 }

@@ -12,15 +12,19 @@
                 <h3>{{@model.title}}</h3>
 
                 <div class="actions">
-                    <button class="btn-pop" type="button">
-                        <LinkTo @route="book.edit" @model={{@model.id}}>
-                            edit
-                        </LinkTo>
-                    </button>
+                    {{#if (can "edit book" @model)}}
+                        <button class="btn-pop" type="button">
+                            <LinkTo @route="book.edit" @model={{@model.id}}>
+                                edit
+                            </LinkTo>
+                        </button>
+                    {{/if}}
 
-                    <button class="btn-recessed" type="button" {{on "click" this.destroy}}>
-                        delete
-                    </button>
+                    {{#if (can "delete book" @model)}}
+                        <button class="btn-recessed" type="button" {{on "click" this.destroy}}>
+                            delete
+                        </button>
+                    {{/if}}
                 </div>
             </div>
 
@@ -45,7 +49,7 @@
                     {{@model.isbn}}
                 </p>
 
-                 <p>
+                <p>
                     <strong>Added By:</strong>
 
                     {{@model.username}}

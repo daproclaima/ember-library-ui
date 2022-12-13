@@ -10,12 +10,17 @@
                 <h3>{{@model.lastName}}, {{@model.firstName}}</h3>
 
                 <div class="actions">
-                    <LinkTo @route="author.edit" @model={{@model.id}}>
-                        <button class="btn-pop" type="button">edit</button>
-                    </LinkTo>
-                    <button class="btn-recessed" type="button" {{on "click" (fn this.deleteAuthor @model)}}>
-                        delete
-                    </button>
+                    {{#if (can "edit author" @model)}}
+                        <LinkTo @route="author.edit" @model={{@model.id}}>
+                            <button class="btn-pop" type="button">edit</button>
+                        </LinkTo>
+                    {{/if}}
+
+                    {{#if (can "delet author" @model)}}
+                        <button class="btn-recessed" type="button" {{on "click" (fn this.deleteAuthor @model)}}>
+                            delete
+                        </button>
+                    {{/if}}
                 </div>
             </div>
 
