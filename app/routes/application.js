@@ -11,12 +11,12 @@ export default class ApplicationRoute extends Route {
   @service router;
 
   beforeModel() {
-    this.session.setup();
     this.loadUser();
   }
 
   constructor() {
     super(...arguments);
+    this.session.setup();
 
     // https://ember-simple-auth.com/api/classes/ApplicationRouteMixin.html#method_sessionInvalidated not used as we want to be redirected to login page
     // this.session.sessionInvalidated

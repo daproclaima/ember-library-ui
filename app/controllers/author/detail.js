@@ -5,9 +5,12 @@ import { AUTHOR } from '../../constants/MODEL_NAMES';
 
 export default class AuthorDetailController extends Controller {
   @service router;
+  @service can;
 
   @action async deleteAuthor(author) {
-    await author.destroyRecord();
-    this.router.transitionTo(AUTHOR);
+    if (this.can.can('delete author', author)) {
+      await author.destroyRecord();
+      this.router.transitionTo(AUTHOR);
+    }
   }
 }
