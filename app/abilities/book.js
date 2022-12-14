@@ -8,6 +8,10 @@ export default class BookAbility extends Ability {
     return this.currentUser?.user?.username === this.model?.username;
   }
 
+  get canCreate() {
+    return this.canEdit;
+  }
+
   get canDelete() {
     return this.canEdit;
   }

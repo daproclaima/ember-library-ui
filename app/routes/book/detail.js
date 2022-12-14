@@ -8,4 +8,8 @@ export default class BookDetailRoute extends Route {
   model({ id }) {
     return this.store.findRecord(BOOK, id);
   }
+
+  afterModel(model) {
+    return Promise.all([model.author, model.reviews]);
+  }
 }

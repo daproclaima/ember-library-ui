@@ -8,4 +8,8 @@ export default class AuthorDetailRoute extends Route {
   async model({ id }) {
     return await this.store.findRecord(AUTHOR, id);
   }
+
+  afterModel(model) {
+    return model.books;
+  }
 }

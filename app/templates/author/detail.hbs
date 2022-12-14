@@ -1,4 +1,4 @@
-{{page-title "Detail"}}
+
 <div class="slide-out-bg"></div>
 
 <div class="slide-out">
@@ -38,11 +38,13 @@
             </div>
 
             <div class="actions">
-                <LinkTo @route="author.detail.new-book" @model={{@model.id}}>
-                    <button type="button" class="btn-secondary btn-add">
-                        Add a book
-                    </button>
-                </LinkTo>
+                {{#if (can "create book" @model)}}
+                    <LinkTo @route="author.detail.new-book" @model={{@model.id}}>
+                        <button type="button" class="btn-secondary btn-add">
+                            Add a book
+                        </button>
+                    </LinkTo>
+                {{/if}}
             </div>
 
             <ul class="book-list">

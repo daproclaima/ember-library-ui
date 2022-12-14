@@ -6,9 +6,6 @@ export default class BookCreateRoute extends Route {
   @service session;
 
   beforeModel(transition) {
-    // if (!this.session.isAuthenticated) {
-    //   this.router.transitionTo(LOGIN);
-    // }
     this.session.requireAuthentication(transition, LOGIN);
   }
 

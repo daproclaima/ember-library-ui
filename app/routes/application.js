@@ -9,38 +9,37 @@ export default class ApplicationRoute extends Route {
   @service session;
   @service currentUser;
   @service router;
-
-  beforeModel() {
-    this.loadUser();
-  }
+  // @service fastboot;
 
   constructor() {
     super(...arguments);
-    this.session.setup();
 
     // https://ember-simple-auth.com/api/classes/ApplicationRouteMixin.html#method_sessionInvalidated not used as we want to be redirected to login page
     // this.session.sessionInvalidated
     this.session.handleInvalidation = () =>
       window.location.replace(`/${LOGIN}`);
 
-    // https://ember-simple-auth.com/api/classes/ApplicationRouteMixin.html#method_sessionAuthenticated is not more fitting than handleAuthentication
-    // this.session.sessionAuthenticated = () => this.loadUser();
-    this.session.handleAuthentication = () => {
-      this.loadUser();
+    this.session.sessionAuthenticated = this.sessionAuthenticated;
+  }
 
-      if (this.session.isAuthenticated) {
-        this.router.replaceWith(
-          this.session?.attemptedTransition?.intent?.name || INDEX,
-          this.session?.attemptedTransition?.intent.contexts[0]
-        );
-      }
-    };
+  beforeModel() {
+    // if (!this.fastboot.isFastBoot)
+    this.loadUser();
+  }
+
+  sessionAuthenticated() {
+    this.session.setup();
+    this.loadUser();
+
+    if (this.session.isAuthenticated) {
+      this.router.replaceWith(
+        this.session?.attemptedTransition?.intent?.name || INDEX,
+        this.session?.attemptedTransition?.intent.contexts[0]
+      );
+    }
   }
 
   loadUser() {
     if (this.session.isAuthenticated) this.currentUser.load();
   }
-
-  // afterModel(model) {
-  // }
 }

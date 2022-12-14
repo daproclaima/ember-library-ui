@@ -17,6 +17,9 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    fastboot: {
+      hostWhitelist: [/^localhost:\d+$/, /^127.0.0.1:\d+$/],
+    },
     'ember-simple-auth-token': {
       serverTokenEndpoint: 'http://localhost:3001/session',
       refreshAccessTokens: false,
