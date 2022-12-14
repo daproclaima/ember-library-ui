@@ -83,6 +83,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "fastboot-app-server": "^3.3.2",
     "luxon": "^3.0.4",
     "moment": "^2.29.4"
   }
