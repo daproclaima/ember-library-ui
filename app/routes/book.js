@@ -1,8 +1,8 @@
-import Route from '@ember/routing/route';
 import { service } from '@ember/service';
 import { BOOK } from '../constants/MODEL_NAMES';
+import ApplicationRoute from './application';
 
-export default class BookRoute extends Route {
+export default class BookRoute extends ApplicationRoute {
   @service store;
   queryParams = {
     search: {

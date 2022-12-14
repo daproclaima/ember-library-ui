@@ -1,11 +1,11 @@
 import JSONAPIAdapter from '@ember-data/adapter/json-api';
 import { service } from '@ember/service';
-import { BUSINESS_API_ROUTE } from '../constants/BUSINESS_API_ROUTES';
+import config from 'library-ui/config/environment';
 
 export default class ApplicationAdapter extends JSONAPIAdapter {
   @service session;
 
-  host = BUSINESS_API_ROUTE;
+  host = config.DS.host;
 
   /**
    * @description https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get

@@ -1,7 +1,12 @@
 'use strict';
 
+require('dotenv').config();
+
 module.exports = function (environment) {
   let ENV = {
+    DS: {
+      host: 'http://localhost:3001',
+    },
     modulePrefix: 'library-ui',
     environment,
     rootURL: '/',
@@ -21,7 +26,6 @@ module.exports = function (environment) {
       hostWhitelist: [/^localhost:\d+$/, /^127.0.0.1:\d+$/],
     },
     'ember-simple-auth-token': {
-      serverTokenEndpoint: 'http://localhost:3001/session',
       refreshAccessTokens: false,
     },
   };
@@ -48,7 +52,11 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.DS.host = process.env.API_HOST;
+    ENV.fastboot.hostWhitelist = [ENV.DS.host, process.env.UI_HOST];
   }
+
+  ENV['ember-simple-auth-token'].serverTokenEndpoint = `${ENV.DS.host}/session`;
 
   return ENV;
 };

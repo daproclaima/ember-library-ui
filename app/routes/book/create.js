@@ -1,8 +1,8 @@
-import Route from '@ember/routing/route';
+import ApplicationRoute from '../application';
 import { LOGIN } from '../../constants/ROUTES_NAMES';
 import { service } from '@ember/service';
 
-export default class BookCreateRoute extends Route {
+export default class BookCreateRoute extends ApplicationRoute {
   @service session;
 
   beforeModel(transition) {

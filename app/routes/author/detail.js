@@ -1,8 +1,8 @@
-import Route from '@ember/routing/route';
+import ApplicationRoute from '../application';
 import { service } from '@ember/service';
 import { AUTHOR } from '../../constants/MODEL_NAMES';
 
-export default class AuthorDetailRoute extends Route {
+export default class AuthorDetailRoute extends ApplicationRoute {
   @service store;
 
   async model({ id }) {

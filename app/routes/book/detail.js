@@ -1,8 +1,8 @@
-import Route from '@ember/routing/route';
+import ApplicationRoute from '../application';
 import { service } from '@ember/service';
 import { BOOK } from '../../constants/MODEL_NAMES';
 
-export default class BookDetailRoute extends Route {
+export default class BookDetailRoute extends ApplicationRoute {
   @service store;
 
   model({ id }) {

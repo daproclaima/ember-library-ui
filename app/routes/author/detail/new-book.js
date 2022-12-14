@@ -1,6 +1,6 @@
-import Route from '@ember/routing/route';
+import ApplicationRoute from '../../application';
 
-export default class AuthorDetailNewBookRoute extends Route {
+export default class AuthorDetailNewBookRoute extends ApplicationRoute {
   model() {
     const author = this.modelFor('author.detail');
 

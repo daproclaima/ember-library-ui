@@ -47,6 +47,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 Specify what it takes to deploy your app.
 
+heroku buildpacks:set heroku/nodejs
+
 ## Further Reading / Useful Links
 
 * [ember.js](https://emberjs.com/)

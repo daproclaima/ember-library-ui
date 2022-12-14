@@ -1,8 +1,8 @@
-import Route from '@ember/routing/route';
+import ApplicationRoute from './application';
 import { INDEX } from '../constants/ROUTES_NAMES';
 import { service } from '@ember/service';
 
-export default class LoginRoute extends Route {
+export default class LoginRoute extends ApplicationRoute {
   @service session;
 
   // @service router;

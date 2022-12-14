@@ -1,4 +1,4 @@
-import Route from '@ember/routing/route';
+import ApplicationRoute from '../application';
 import { CREATE_AUTHOR_DEFAULT_MODEL } from '../../constants/FORM_DEFAULT_MODELS';
 import { LOGIN } from '../../constants/ROUTES_NAMES';
 import { service } from '@ember/service';
@@ -7,7 +7,7 @@ import { service } from '@ember/service';
 // import AuthenticatedRouteMixin from 'ember-simple-auth/addon/mixins/authenticated-route-mixin'
 // export default class AuthorCreateRoute extends Route.extend(AuthenticatedRouteMixin) {
 
-export default class AuthorCreateRoute extends Route {
+export default class AuthorCreateRoute extends ApplicationRoute {
   @service session;
 
   beforeModel(transition) {

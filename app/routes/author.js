@@ -1,9 +1,8 @@
-import Route from '@ember/routing/route';
+import ApplicationRoute from './application';
 import { service } from '@ember/service';
-
 import { AUTHOR } from '../constants/MODEL_NAMES';
 
-export default class AuthorRoute extends Route {
+export default class AuthorRoute extends ApplicationRoute {
   @service store;
 
   queryParams = {

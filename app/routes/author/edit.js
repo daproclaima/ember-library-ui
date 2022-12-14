@@ -1,9 +1,9 @@
-import Route from '@ember/routing/route';
+import ApplicationRoute from '../application';
 import { service } from '@ember/service';
 import { AUTHOR } from '../../constants/MODEL_NAMES';
 import { AUTHOR_DETAIL, LOGIN } from '../../constants/ROUTES_NAMES';
 
-export default class AuthorEditRoute extends Route {
+export default class AuthorEditRoute extends ApplicationRoute {
   @service store;
   @service session;
   @service router;
